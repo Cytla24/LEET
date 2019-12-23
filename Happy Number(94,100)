@@ -1,0 +1,18 @@
+class Solution:
+    def isHappy(self, n: int) -> bool:
+        dicta = {}
+        dicta[n] = 0
+        
+        while True:
+            inp = str(n)
+            final = 0
+            for i in inp:
+                 final += int(i)**2
+            if final == 1:
+                return True
+            elif final in dicta:
+                return False
+            else:
+                dicta[final] = 1
+                n = final
+        
